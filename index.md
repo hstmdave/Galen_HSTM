@@ -20,6 +20,8 @@
  
   // Wait for the widget to be ready before applying validation
   window.addEventListener("onEmbeddedMessagingReady", function () {
+    console.log("Embedded Messaging is ready");
+ 
     // Make the Phone field visible and editable
     embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
       "Phone": {
@@ -31,17 +33,23 @@
     // Add validation logic for the Phone field
     embeddedservice_bootstrap.prechatAPI.setPrechatFieldValidation(function (fields) {
       const phone = fields.Phone?.value || "";
-      const digitsOnly = phone.replace(/\D/g, '');
  
-      // Check for exactly 10 digits and ensure it's not an email or contains letters
-      const isValidPhone = /^\d{10}$/.test(digitsOnly) && !/[a-zA-Z@]/.test(phone);
- 
-      if (!isValidPhone) {
-        alert("Please enter a valid 10-digit phone number (numbers only, no letters or email addresses).");
-        return false; // Prevents chat from starting
+      // Reject if it contains any letters or email-like characters
+      if (/[a-zA-Z@.]/.test(phone)) {
+        alert("Phone number must contain only numbers. Letters or email addresses are not allowed.");
+        return false;
       }
  
-      return true; // Allows chat to start
+      // Remove non-digit characters
+      const digitsOnly = phone.replace(/\D/g, '');
+ 
+      // Check for exactly 10 digits
+      if (digitsOnly.length !== 10) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+      }
+ 
+      return true;
     });
   });
 </script>
