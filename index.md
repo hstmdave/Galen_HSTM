@@ -24,7 +24,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const observer = new MutationObserver(() => {
-      const phoneInput = document.querySelector('input[name="tel"]');
+      const phoneInput = document.querySelector('input[name="Phone"]');
       if (phoneInput) {
         const form = phoneInput.closest('form');
         observer.disconnect();
