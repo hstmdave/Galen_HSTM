@@ -7,8 +7,8 @@
 
 			embeddedservice_bootstrap.init(
 				'00DWL000002dfgT',
-				'Galen_Messaging',
-				'https://healthstream--hstm.sandbox.my.site.com/ESWGalenMessaging1753122143194',
+				'HCA_Student_Messaging',
+				'https://healthstream--hstm.sandbox.my.site.com/ESWHCAStudentMessaging1753122143194',
 				{
 					scrt2URL: 'https://healthstream--hstm.sandbox.my.salesforce-scrt.com'
 				}
@@ -18,7 +18,7 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://healthstream--hstm.sandbox.my.site.com/ESWGalenMessaging1753122143194/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='https://healthstream--hstm.sandbox.my.site.com/ESWHCAStudentMessaging1753122143194/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </head>
 
