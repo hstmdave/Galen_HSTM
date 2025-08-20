@@ -19,6 +19,7 @@
 	};
 </script>
 <script type='text/javascript' src='https://healthstream--hstm.sandbox.my.site.com/ESWHCAStudentMessaging1753122143194/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
 </body>
 </head>
 
